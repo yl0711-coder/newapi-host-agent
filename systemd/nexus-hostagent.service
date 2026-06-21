@@ -1,0 +1,10 @@
+[Unit]
+Description=NexusAPI host metrics agent (oneshot)
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=oneshot
+EnvironmentFile=/opt/nexus-hostagent/agent.env
+ExecStart=/opt/nexus-hostagent/report.sh
+Nice=10
