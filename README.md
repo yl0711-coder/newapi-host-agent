@@ -1,5 +1,10 @@
 # newapi-host-agent
 
+> **状态(2026-06-24):备选实现,当前未部署。** 线上 Master/Slave/Redis 实际部署的是
+> [newapi-monitor](https://github.com/yl0711-coder/newapi-monitor) 的 **`cmd/hostagent`(容器版,Go)**,镜像 `newapi-monitor-hostagent`。
+> 本仓是 **systemd + shell 的备选版(不依赖 docker,适合无 docker 的节点如 Ubuntu-1)**,功能可能落后于容器版。
+> **以线上为准:改/部署以容器版为标准**;本仓作无 docker 场景的备选/参考,要用前需先与容器版对齐。
+
 NexusAPI 主机指标采集器。采集 **AWS 接口拿不到的主机 OS 指标**(内存 / 磁盘 / swap / load),
 推送给 [newapi-monitor](https://github.com/yl0711-coder/newapi-monitor) 的 `/internal/host` 接收端点,
 在 monitor 的「服务端监控」Tab 展示。
